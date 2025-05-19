@@ -1,0 +1,36 @@
+.hero {
+    padding: 80px 0;
+    background-color: $light-gray;
+
+    &__container {
+        @include container();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__content {
+        max-width: 50%;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: $secondary-color;
+    }
+
+    &__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    &__image {
+        max-width: 40%;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

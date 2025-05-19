@@ -1,0 +1,37 @@
+
+@import 'base/reset';
+@import 'base/typography';
+@import 'utils/variables';
+@import 'utils/mixins';
+
+
+@import 'components/buttons';
+@import 'layout/grid';
+@import 'layout/container';
+@import 'sections/hero';
+
+
+body {
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $primary-text-color;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &--primary {
+        background-color: $primary-color;
+        color: $white;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
