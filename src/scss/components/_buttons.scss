@@ -1,0 +1,20 @@
+.button {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer; 
+    border: none; 
+
+    &--primary {
+        background-color: $primary-color;
+        color: $white;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}

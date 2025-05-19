@@ -1,5 +1,5 @@
 .hero {
-    padding: 80px 0;
+    padding: 100px 0; 
     background-color: $light-gray;
 
     &__container {
@@ -7,30 +7,167 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: column;
+            text-align: center;
+        }
     }
 
     &__content {
-        max-width: 50%;
+        max-width: 45%;
+
+        @media (max-width: $breakpoint-tablet) {
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
     }
 
     &__title {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        color: $secondary-color;
+        font-size: 4rem; 
+        margin-bottom: 25px;
+
+        &-accent {
+            color: $primary-color;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 3rem;
+        }
     }
 
-    &__subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
+    &__description {
+        font-size: 1.1rem;
+        color: $secondary-text-color;
+        margin-bottom: 40px; 
+        line-height: 1.8; 
+    }
+
+    &__button {
+        font-size: 1rem;
+        padding: 18px 36px; 
+    }
+
+    &__image-wrapper {
+        position: relative;
+        max-width: 50%;
+        border-radius: 12px; 
+        overflow: hidden; 
+
+        @media (max-width: $breakpoint-tablet) {
+            max-width: 80%;
+        }
     }
 
     &__image {
-        max-width: 40%;
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    }
 
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
+    &__badge {
+        position: absolute;
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        z-index: 10; 
+
+        &--review {
+            top: 30px; 
+            left: 30px;
+
+            .hero__badge-avatar {
+                width: 45px; 
+                height: 45px;
+                border-radius: 50%;
+                margin-right: 12px;
+                object-fit: cover; 
+            }
+
+            .hero__badge-name {
+                font-weight: 600;
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+
+            .hero__badge-comment {
+                font-size: 0.9rem;
+                color: $secondary-text-color;
+            }
+        }
+
+        &--courses {
+            bottom: 40px; 
+            left: 50px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px; 
+
+            .hero__badge-number {
+                font-size: 1.8rem; 
+                font-weight: 700;
+                color: $primary-color;
+                margin-bottom: 8px;
+            }
+
+            .hero__badge-category {
+                font-size: 1rem;
+                color: $secondary-text-color;
+            }
+        }
+
+        &--students {
+            bottom: 30px; 
+            right: 40px;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 15px;
+
+            .hero__badge-avatars {
+                display: flex;
+                margin-bottom: 10px;
+
+                img {
+                    width: 35px; 
+                    height: 35px;
+                    border-radius: 50%;
+                    margin-left: -10px;
+                    border: 2px solid $white;
+                    object-fit: cover;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                    transition: transform 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                    }
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+
+                .hero__badge-avatars-more {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    background-color: rgba($primary-color, 0.15); 
+                    color: $primary-color;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+            }
+
+            .hero__badge-students-text {
+                font-size: 0.9rem;
+                color: $secondary-text-color;
+            }
         }
     }
 }

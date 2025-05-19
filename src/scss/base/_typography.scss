@@ -1,0 +1,21 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $primary-text-color;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: $secondary-color;
+}
+
+h1 {
+    font-size: 3.5rem; 
+}
+
+p {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,53 @@
+.header {
+    padding: 20px 0;
+    background-color: $white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); 
+
+    &__container {
+        @include container();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: block;
+
+        img {
+            height: 30px; 
+        }
+    }
+
+    .nav {
+        &__list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            margin-left: 25px; 
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            color: $primary-text-color;
+            font-weight: 500;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .button--primary {
+        font-size: 0.9rem; 
+        padding: 14px 28px; 
+    }
+}

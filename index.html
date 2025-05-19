@@ -3,23 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Онлайн платформа для вивчення мов</title>
+    <title>Онлайн платформа для вивчення мов - MKS</title>
     <link rel="stylesheet" href="dist/css/style.css">
-    <img src="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <div class="hero__content">
-                <h1 class="hero__title">Вивчайте мови легко та ефективно разом з нами!</h1>
-                <p class="hero__subtitle">Знайдіть ідеальний курс та почніть говорити вже сьогодні.</p>
-                <a href="#" class="button button--primary">Розпочати навчання</a>
-            </div>
-            <div class="hero__image">
-                <img src="img/header/hero-image.png" alt="Ілюстрація до головного банера">
-            </div>
+    <header class="header">
+        <div class="container header__container">
+            <a href="/" class="logo">
+                <img src="img/logo.png">
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link">Курси</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Про нас</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Викладачі</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Ціни</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Кар'єра</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Блог</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="button button--primary">Get started</a>
         </div>
     </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <span class="hero__title-accent">Унікальний</span> підхід до вивчення іноземних мов онлайн
+                    </h1>
+                    <p class="hero__description">
+                        Навчайтеся у своєму власному темпі, з довічним доступом на мобільних та настільних пристроях.
+                    </p>
+                    <a href="#" class="button button--primary hero__button">Get started</a>
+                </div>
+                <div class="hero__image-wrapper">
+                    <img src="img/hero/1.png" class="hero__image">
+                    <div class="hero__badge hero__badge--review">
+                        <img src="img/avatars/5.png" class="hero__badge-avatar">
+                        <div class="hero__badge-text">
+                            <p class="hero__badge-name">Jane Cooper</p>
+                            <p class="hero__badge-comment">I loved the Italian course!</p>
+                        </div>
+                    </div>
+                    <div class="hero__badge hero__badge--courses">
+                        <p class="hero__badge-number">10+ Courses</p>
+                        <p class="hero__badge-category">Multiple Categories</p>
+                    </div>
+                    <div class="hero__badge hero__badge--students">
+                        <div class="hero__badge-avatars">
+                            <img src="img/avatars/1.png" alt="Аватар 1">
+                            <img src="img/avatars/2.png" alt="Аватар 2">
+                            <img src="img/avatars/3.png" alt="Аватар 3">
+                            <img src="img/avatars/4.png" alt="Аватар 4">
+                            <div class="hero__badge-avatars-more">+50</div>
+                        </div>
+                        <p class="hero__badge-students-text">Dedicated students per day</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MKS. Всі права захищено.</p>
+        </div>
+    </footer>
 
     <script src="dist/js/script.js"></script>
 </body>

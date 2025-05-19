@@ -1,0 +1,40 @@
+@mixin container($maxWidth: 1200px, $paddingHorizontal: 20px) {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding-left: $paddingHorizontal;
+  padding-right: $paddingHorizontal;
+
+  @media (max-width: $maxWidth) {
+    padding-left: calc($paddingHorizontal / 2);
+    padding-right: calc($paddingHorizontal / 2);
+  }
+
+
+  &--fluid {
+    max-width: 100%;
+    padding-left: $paddingHorizontal;
+    padding-right: $paddingHorizontal;
+  }
+
+  &--small {
+    max-width: 768px;
+  }
+
+  &--large {
+    max-width: 1440px;
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.container {
+  @include container();
+}

@@ -1,14 +1,19 @@
+@import 'base/_reset';
+@import 'base/_typography';
 
-@import 'base/reset';
-@import 'base/typography';
-@import 'utils/variables';
-@import 'utils/mixins';
+@import 'utils/_variables';
+@import 'utils/_mixins';
 
 
-@import 'components/buttons';
-@import 'layout/grid';
 @import 'layout/container';
-@import 'sections/hero';
+@import 'layout/_header';
+@import 'layout/_footer';
+
+
+@import 'components/_buttons';
+
+
+@import 'sections/_hero';
 
 
 body {
