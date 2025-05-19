@@ -1,53 +1,75 @@
 .header {
-    padding: 20px 0;
-    background-color: $white;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); 
+  padding: 20px 0;
+  background-color: $white;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10; 
 
-    &__container {
-        @include container();
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  &__container {
+    @include container();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: block;
+    z-index: 15; 
+
+    img {
+      height: 30px;
+      width: auto; 
+    }
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 25px; 
     }
 
-    .logo {
-        display: block;
-
-        img {
-            height: 30px; 
-        }
+    &__item:first-child {
+      margin-left: 0; 
     }
 
-    .nav {
-        &__list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    &__link {
+      text-decoration: none;
+      color: $primary-text-color;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
 
-        &__item {
-            margin-left: 25px; 
+      &:hover {
+        color: $primary-color;
+      }
 
-            &:first-child {
-                margin-left: 0;
-            }
-        }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $primary-color;
+        transition: width 0.3s;
+      }
 
-        &__link {
-            text-decoration: none;
-            color: $primary-text-color;
-            font-weight: 500;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: $primary-color;
-            }
-        }
+      &:hover::after {
+        width: 100%;
+      }
     }
+  }
 
-    .button--primary {
-        font-size: 0.9rem; 
-        padding: 14px 28px; 
+  .button--primary {
+    font-size: 0.9rem;
+    padding: 14px 28px;
+    transition: transform 0.2s; 
+
+    &:hover {
+      transform: translateY(-2px);
     }
+  }
 }
