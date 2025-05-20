@@ -112,7 +112,6 @@ $shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);
 
             .faq__toggle-btn {
                 background-color: rgba(255, 255, 255, 0.2); 
-                // Removed img filter here as we'll change the image source in JS
             }
 
             @media (max-width: 768px) {
@@ -123,18 +122,13 @@ $shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);
 
         &--active {
             .faq__answer {
-                max-height: 500px; /* Adjust as needed for content height */
+                max-height: 500px; 
                 opacity: 1;
                 pointer-events: auto;
                 margin-top: $spacing-m; 
             }
 
-            // This part will be handled by JS for img src change
-            // .faq__toggle-btn {
-            //     img {
-            //         content: url('../../img/minus.svg'); 
-            //     }
-            // }
+          
         }
     }
 
@@ -177,7 +171,7 @@ $shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);
         img {
             width: 16px;
             height: 16px;
-            transition: transform 0.3s ease; // Smooth rotation for plus/minus
+            transition: transform 0.3s ease; 
         }
     }
 
