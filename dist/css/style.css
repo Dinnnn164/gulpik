@@ -529,127 +529,278 @@ p {
   white-space: nowrap;
 }
 
-/* src/scss/sections/_values.scss */
 .values {
-  padding: 80px 0; /* Відступи зверху та знизу */
-  text-align: center; /* Центрування тексту */
-  background-color: #F8F9FE; /* Дуже світлий фон, як на зображенні */
+  padding: 80px 0;
+  text-align: center;
+  background-color: #F8F9FE;
 }
-
-.values__subtitle {
+.values .values__subtitle {
   font-size: 14px;
   font-weight: 500;
-  color: #8C8C8C; /* Сірий колір, як на зображенні */
+  color: #8C8C8C;
   text-transform: uppercase;
   margin-bottom: 10px;
-  letter-spacing: 1.5px; /* Невеликий інтервал між літерами */
+  letter-spacing: 1.5px;
 }
-
-.values__title {
-  font-size: 44px; /* Великий, жирний заголовок */
+.values .values__title {
+  font-size: 44px;
   font-weight: 700;
-  color: #2F2F2F; /* Темний колір, майже чорний */
-  margin-bottom: 60px; /* Простір між заголовком та картками */
+  color: #2F2F2F;
+  margin-bottom: 60px;
 }
 @media (max-width: 768px) {
-  .values__title {
-    font-size: 36px; /* Зменшити розмір на мобільних */
+  .values .values__title {
+    font-size: 36px;
     margin-bottom: 40px;
   }
 }
-
-.values__cards {
+.values .values__cards {
   display: flex;
-  justify-content: center; /* Центрування карток */
-  gap: 30px; /* Відстань між картками */
-  flex-wrap: wrap; /* Дозволяє карткам переноситися на менших екранах */
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
-
-.values__card {
-  flex: 0 1 320px; /* Основний розмір картки, flex-grow: 0, flex-shrink: 1, base-width: 320px */
-  max-width: 350px; /* Максимальна ширина картки */
-  background-color: #fff; /* Білий фон */
+.values .values__card {
+  flex: 0 1 320px;
+  max-width: 350px;
+  background-color: #fff;
   padding: 30px;
-  border-radius: 15px; /* Закруглені кути */
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Дуже легка тінь */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease; /* Плавний перехід при наведенні */
+  transition: transform 0.3s ease;
 }
-.values__card:hover {
-  transform: translateY(-5px); /* Ефект легкого підняття при наведенні */
+.values .values__card:hover {
+  transform: translateY(-5px);
 }
 @media (max-width: 768px) {
-  .values__card {
-    margin-bottom: 20px; /* Додати відступ між картками на мобільних */
+  .values .values__card {
+    margin-bottom: 20px;
   }
 }
-
-.values__card-icon {
-  width: 100px; /* Розмір фону іконки */
+.values .values__card-icon {
+  width: 100px;
   height: 100px;
-  border-radius: 20px; /* Закруглені кути для фону іконки */
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  position: relative; /* Для позиціонування градієнтних іконок, якщо будете використовувати SVG */
-  overflow: hidden; /* Щоб градієнт не виходив за межі */
+  position: relative;
+  overflow: hidden;
 }
-
-.values__card-icon img {
-  width: 60px; /* Розмір самого зображення іконки */
+.values .values__card-icon img {
+  width: 60px;
   height: 60px;
   object-fit: contain;
-  position: relative; /* Щоб іконка була поверх фону */
+  position: relative;
   z-index: 1;
 }
-
-/* Специфічні кольори фону для кожної іконки, відповідно до зображення */
-.values__card-icon--speaking-clubs {
-  background-color: #EBF0FF; /* Дуже світлий синій */
+.values .values__card-icon--speaking-clubs {
+  background-color: #EBF0FF;
 }
-
-.values__card-icon--quality-control {
-  background-color: #FFF3EB; /* Дуже світлий помаранчевий */
+.values .values__card-icon--quality-control {
+  background-color: #FFF3EB;
 }
-
-.values__card-icon--progress-analysis {
-  background-color: #EEF0FF; /* Дуже світлий фіолетовий */
+.values .values__card-icon--progress-analysis {
+  background-color: #EEF0FF;
 }
-
-.values__card-title {
+.values .values__card-title {
   font-size: 22px;
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
 }
-
-.values__card-description {
+.values .values__card-description {
   font-size: 16px;
   color: #666;
   line-height: 1.6;
 }
-
-/* Медіа-запити для адаптивності */
 @media (max-width: 992px) {
-  .values__cards {
+  .values .values__cards {
     gap: 20px;
   }
-  .values__card {
-    flex: 0 1 45%; /* Дві картки на рядок на планшетах */
-    min-width: unset; /* Скинути мінімальну ширину */
+  .values .values__card {
+    flex: 0 1 45%;
+    min-width: unset;
   }
 }
 @media (max-width: 600px) {
-  .values__cards {
+  .values .values__cards {
     flex-direction: column;
     align-items: center;
   }
-  .values__card {
-    width: 90%; /* Майже повна ширина на мобільних */
-    max-width: 320px; /* Щоб не розтягувалися занадто широко */
+  .values .values__card {
+    width: 90%;
+    max-width: 320px;
   }
+}
+
+.teachers {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.teachers__subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8C8C8C;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.teachers__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .teachers__header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+}
+
+.teachers__title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #2F2F2F;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .teachers__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+}
+
+.teachers__navigation {
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .teachers__navigation {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+.teachers__nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #EEF0FF;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+.teachers__nav-btn img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(26%) sepia(87%) saturate(2035%) hue-rotate(222deg) brightness(98%) contrast(95%); /* Колір стрілки #6C5CE7 */
+}
+.teachers__nav-btn:hover {
+  background-color: #6C5CE7;
+}
+.teachers__nav-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.teachers__nav-btn--next {
+  background-color: #6C5CE7;
+}
+.teachers__nav-btn--next img {
+  filter: brightness(0) invert(1);
+}
+
+.teachers__list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.teacher-card {
+  flex: 0 1 320px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+.teacher-card:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 992px) {
+  .teacher-card {
+    flex: 0 1 calc(50% - 15px);
+  }
+}
+@media (max-width: 600px) {
+  .teacher-card {
+    flex: 0 1 100%;
+  }
+}
+
+.teacher-card__image-wrapper {
+  height: 300px;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.teacher-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teacher-card__image-wrapper--blue-bg {
+  background-color: #DFE8FF;
+}
+
+.teacher-card__image-wrapper--pink-bg {
+  background-color: #FFDFE1;
+}
+
+.teacher-card__image-wrapper--purple-bg {
+  background-color: #E6E0FF;
+}
+
+.teacher-card__name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.teacher-card__subject {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.teacher-card__flag {
+  width: 20px;
+  height: auto;
+  object-fit: contain;
 }
