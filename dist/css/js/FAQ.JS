@@ -105,12 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Ініціалізація каруселі
+
     document.querySelectorAll('.student-carousel').forEach(carousel => {
         new StudentCarousel(carousel);
     });
 
-    // Обробник для FAQ
+    
     const faqItems = document.querySelectorAll('.faq__item');
     faqItems.forEach(item => {
         const toggleBtn = item.querySelector('.faq__toggle-btn');
@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBtn.addEventListener('click', () => {
             const isActive = item.classList.contains('faq__item--active');
             
-            // Закрити всі елементи
             faqItems.forEach(el => {
                 el.classList.remove('faq__item--active');
                 el.querySelector('.faq__answer').style.maxHeight = null;
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.setAttribute('aria-expanded', 'false');
             });
 
-            // Відкрити поточний елемент
             if (!isActive) {
                 item.classList.add('faq__item--active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
