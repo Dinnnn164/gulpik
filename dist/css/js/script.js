@@ -137,5 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.setAttribute('aria-expanded', 'true');
             }
         });
+    // Burger menu handler
+document.querySelectorAll('.burger-menu').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        const nav = document.querySelector('.nav');
+        
+        btn.classList.toggle('active');
+        nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', !isExpanded);
     });
 });
+
+});
+    });

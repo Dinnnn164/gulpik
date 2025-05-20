@@ -1,75 +1,178 @@
 .header {
-  padding: 20px 0;
-  background-color: $white;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 10; 
+    padding: 20px 0;
+    background-color: $white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
 
-  &__container {
-    @include container();
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    display: block;
-    z-index: 15; 
-
-    img {
-      height: 30px;
-      width: auto; 
-    }
-  }
-
-  .nav {
-    &__list {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 25px; 
+    &__container {
+        @include container();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    &__item:first-child {
-      margin-left: 0; 
+    .logo {
+        display: block;
+        z-index: 15;
+
+        img {
+            height: 30px;
+            width: auto;
+        }
     }
 
-    &__link {
-      text-decoration: none;
-      color: $primary-text-color;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
+    .nav {
+        &__list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+        }
 
-      &:hover {
-        color: $primary-color;
-      }
+        &__link {
+            text-decoration: none;
+            color: $primary-text-color;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: $primary-color;
-        transition: width 0.3s;
-      }
+            &:hover {
+                color: $primary-color;
 
-      &:hover::after {
-        width: 100%;
-      }
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $primary-color;
+                transition: width 0.3s;
+            }
+        }
     }
-  }
 
-  .button--primary {
-    font-size: 0.9rem;
-    padding: 14px 28px;
-    transition: transform 0.2s; 
+    .button--primary {
+        font-size: 0.9rem;
+        padding: 14px 28px;
+        transition: transform 0.2s;
 
-    &:hover {
-      transform: translateY(-2px);
+        &:hover {
+            transform: translateY(-2px);
+        }
     }
-  }
+
+    // Tablet
+    @media (max-width: 1023px) {
+        padding: 15px 0;
+
+        .nav__list {
+            gap: 15px;
+        }
+
+        .button--primary {
+            padding: 12px 24px;
+            font-size: 0.85rem;
+        }
+    }
+
+    // Mobile
+    @media (max-width: 767px) {
+        position: relative;
+
+        &__container {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 25px;
+        }
+
+        .nav {
+            order: 3;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &__list {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 0;
+                gap: 12px;
+            }
+
+            &__link {
+                font-size: 16px;
+                padding: 8px 0;
+
+                &::after {
+                    bottom: -3px;
+                }
+            }
+
+            &.active {
+                max-height: 100vh;
+            }
+        }
+
+        .button--primary {
+            order: 2;
+            margin-left: auto;
+        }
+
+        // Бургер-меню
+        .burger-menu {
+            display: block;
+            width: 30px;
+            height: 22px;
+            position: relative;
+            cursor: pointer;
+            order: 1;
+            background: none;
+            border: none;
+            padding: 0;
+
+            span {
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                background: $primary-text-color;
+                transition: all 0.3s;
+
+                &:nth-child(1) { top: 0 }
+                &:nth-child(2) { top: 9px }
+                &:nth-child(3) { bottom: 0 }
+            }
+
+            &.active {
+                span {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(5px, 6px);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg) translate(5px, -6px);
+                    }
+                }
+            }
+        }
+    }
+
+    // Hide burger on desktop
+    @media (min-width: 768px) {
+        .burger-menu {
+            display: none;
+        }
+    }
 }
