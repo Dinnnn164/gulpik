@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -60,7 +61,6 @@ h1, h2, h3 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #28a745;
 }
 
 h1 {
@@ -359,7 +359,7 @@ p {
   margin-bottom: 25px;
 }
 .hero__title-accent {
-  color: #6f42c1;
+  color: #007bff;
   display: block;
 }
 @media (max-width: 768px) {
@@ -377,8 +377,8 @@ p {
   font-size: 1rem;
   padding: 16px 32px;
   border-radius: 50px;
-  background: #6f42c1;
-  color: #ffffff;
+  background: #007bff;
+  color: #fff;
   border: none;
   cursor: pointer;
   transition: transform 0.2s;
@@ -399,7 +399,7 @@ p {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(111, 66, 193, 0.05);
+  background: rgba(0, 123, 255, 0.05);
   border-radius: 20px;
   transform: rotate(5deg) translate(30px, -20px);
   z-index: -1;
@@ -425,93 +425,231 @@ p {
 }
 .hero__badge {
   position: absolute;
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  padding: 15px;
+  z-index: 2;
 }
 .hero__badge--review {
-  top: 30px;
-  left: 30px;
+  top: 120px;
+  left: -80px;
   display: flex;
   align-items: center;
   gap: 12px;
-  max-width: 260px;
+  padding: 15px;
+  max-width: 280px;
 }
-.hero__badge--review .hero__badge-avatars {
-  display: flex;
-  gap: 8px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+.hero__badge--review .hero__badge-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.hero__badge--review .hero__badge-avatars img {
-  flex-shrink: 0;
-}
-.hero__badge--review .hero__badge-avatars .hero__badge-avatars-more {
-  flex-shrink: 0;
-}
-.hero__badge--review .hero__badge-text .name {
+.hero__badge--review .hero__badge-name {
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 4px;
   color: rgb(72.5407725322, 78.5858369099, 83.9592274678);
 }
-.hero__badge--review .hero__badge-text .comment {
+.hero__badge--review .hero__badge-comment {
   font-size: 0.85rem;
   color: #6c757d;
   line-height: 1.4;
 }
 .hero__badge--courses {
-  bottom: 80px;
-  left: 40px;
-  padding: 20px;
+  top: 160px;
+  right: -20px;
+  padding: 15px 20px;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.hero__badge--courses .number {
-  font-size: 2.2rem;
+.hero__badge--courses .hero__badge-number {
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #6f42c1;
-  margin-bottom: 6px;
+  color: #007bff;
+  margin-bottom: 4px;
   line-height: 1;
 }
-.hero__badge--courses .category {
-  font-size: 0.9rem;
+.hero__badge--courses .hero__badge-category {
+  font-size: 0.8rem;
   color: #6c757d;
   white-space: nowrap;
 }
 .hero__badge--students {
-  bottom: 40px;
-  right: 40px;
-  padding: 15px;
-}
-.hero__badge--students .avatars {
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 260px;
   display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.hero__badge--students .avatars img {
-  width: 34px;
-  height: 34px;
+.hero__badge--students .hero__badge-avatars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 0;
+}
+.hero__badge--students .hero__badge-avatars img {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   object-fit: cover;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-.hero__badge--students .avatars .more {
-  width: 34px;
-  height: 34px;
+.hero__badge--students .hero__badge-avatars img:not(:first-child) {
+  margin-left: -12px;
+}
+.hero__badge--students .hero__badge-avatars .hero__badge-avatars-more {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: rgba(111, 66, 193, 0.1);
-  color: #6f42c1;
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  margin-left: -12px;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-.hero__badge--students .text {
-  font-size: 0.85rem;
+.hero__badge--students .hero__badge-students-text {
+  font-size: 0.9rem;
   color: #6c757d;
-  text-align: right;
   font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* src/scss/sections/_values.scss */
+.values {
+  padding: 80px 0; /* Відступи зверху та знизу */
+  text-align: center; /* Центрування тексту */
+  background-color: #F8F9FE; /* Дуже світлий фон, як на зображенні */
+}
+
+.values__subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8C8C8C; /* Сірий колір, як на зображенні */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px; /* Невеликий інтервал між літерами */
+}
+
+.values__title {
+  font-size: 44px; /* Великий, жирний заголовок */
+  font-weight: 700;
+  color: #2F2F2F; /* Темний колір, майже чорний */
+  margin-bottom: 60px; /* Простір між заголовком та картками */
+}
+@media (max-width: 768px) {
+  .values__title {
+    font-size: 36px; /* Зменшити розмір на мобільних */
+    margin-bottom: 40px;
+  }
+}
+
+.values__cards {
+  display: flex;
+  justify-content: center; /* Центрування карток */
+  gap: 30px; /* Відстань між картками */
+  flex-wrap: wrap; /* Дозволяє карткам переноситися на менших екранах */
+}
+
+.values__card {
+  flex: 0 1 320px; /* Основний розмір картки, flex-grow: 0, flex-shrink: 1, base-width: 320px */
+  max-width: 350px; /* Максимальна ширина картки */
+  background-color: #fff; /* Білий фон */
+  padding: 30px;
+  border-radius: 15px; /* Закруглені кути */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* Дуже легка тінь */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease; /* Плавний перехід при наведенні */
+}
+.values__card:hover {
+  transform: translateY(-5px); /* Ефект легкого підняття при наведенні */
+}
+@media (max-width: 768px) {
+  .values__card {
+    margin-bottom: 20px; /* Додати відступ між картками на мобільних */
+  }
+}
+
+.values__card-icon {
+  width: 100px; /* Розмір фону іконки */
+  height: 100px;
+  border-radius: 20px; /* Закруглені кути для фону іконки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative; /* Для позиціонування градієнтних іконок, якщо будете використовувати SVG */
+  overflow: hidden; /* Щоб градієнт не виходив за межі */
+}
+
+.values__card-icon img {
+  width: 60px; /* Розмір самого зображення іконки */
+  height: 60px;
+  object-fit: contain;
+  position: relative; /* Щоб іконка була поверх фону */
+  z-index: 1;
+}
+
+/* Специфічні кольори фону для кожної іконки, відповідно до зображення */
+.values__card-icon--speaking-clubs {
+  background-color: #EBF0FF; /* Дуже світлий синій */
+}
+
+.values__card-icon--quality-control {
+  background-color: #FFF3EB; /* Дуже світлий помаранчевий */
+}
+
+.values__card-icon--progress-analysis {
+  background-color: #EEF0FF; /* Дуже світлий фіолетовий */
+}
+
+.values__card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.values__card-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 992px) {
+  .values__cards {
+    gap: 20px;
+  }
+  .values__card {
+    flex: 0 1 45%; /* Дві картки на рядок на планшетах */
+    min-width: unset; /* Скинути мінімальну ширину */
+  }
+}
+@media (max-width: 600px) {
+  .values__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .values__card {
+    width: 90%; /* Майже повна ширина на мобільних */
+    max-width: 320px; /* Щоб не розтягувалися занадто широко */
+  }
 }

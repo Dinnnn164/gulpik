@@ -1,0 +1,123 @@
+
+.values {
+    padding: 80px 0; 
+    text-align: center;
+    background-color: #F8F9FE;
+
+.values__subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8C8C8C; 
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px; 
+}
+
+.values__title {
+    font-size: 44px; 
+    font-weight: 700;
+    color: #2F2F2F; 
+    margin-bottom: 60px; 
+
+    @media (max-width: 768px) {
+        font-size: 36px; 
+        margin-bottom: 40px;
+    }
+}
+
+.values__cards {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.values__card {
+    flex: 0 1 320px; 
+    max-width: 350px; 
+    background-color: #fff; 
+    padding: 30px;
+    border-radius: 15px; 
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease; 
+
+    &:hover {
+        transform: translateY(-5px); 
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 20px; 
+    }
+}
+
+.values__card-icon {
+    width: 100px; 
+    height: 100px;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.values__card-icon img {
+    width: 60px; 
+    height: 60px;
+    object-fit: contain;
+    position: relative; 
+    z-index: 1;
+}
+
+.values__card-icon--speaking-clubs {
+    background-color: #EBF0FF; 
+}
+
+.values__card-icon--quality-control {
+    background-color: #FFF3EB; 
+}
+
+.values__card-icon--progress-analysis {
+    background-color: #EEF0FF; 
+}
+
+
+.values__card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.values__card-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .values__cards {
+        gap: 20px;
+    }
+    .values__card {
+        flex: 0 1 45%; 
+        min-width: unset; 
+    }
+}
+
+@media (max-width: 600px) {
+    .values__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .values__card {
+        width: 90%; 
+        max-width: 320px; 
+    }
+}
+}

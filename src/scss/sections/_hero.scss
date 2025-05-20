@@ -1,8 +1,5 @@
-
-$light-gray: #f8f9fa;
-$primary-color: #6f42c1;
-$white: #ffffff;
-$breakpoint-tablet: 768px;
+// Цей код має бути у файлі sections/_hero.scss
+// Не потрібно повторювати змінні та міксини тут, вони вже імпортуються в головному style.scss
 
 .hero {
   padding: 80px 0;
@@ -29,7 +26,7 @@ $breakpoint-tablet: 768px;
   }
 
   &__container {
-    @include container(); // Міксін для центрування та максимальної ширини
+    @include container();
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,7 +87,6 @@ $breakpoint-tablet: 768px;
     }
   }
 
-  // Стилі для зображення
   &__image-wrapper {
     position: relative;
     width: 500px;
@@ -131,111 +127,125 @@ $breakpoint-tablet: 768px;
     }
   }
 
-  // Стилі для бейджів
+  // Common badge style
   &__badge {
     position: absolute;
     background: $white;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 15px;
+    z-index: 2;
 
     &--review {
-      top: 30px;
-      left: 30px;
+      // Позиціонування за зображенням (ліворуч від голови дівчини)
+      top: 120px; // Налаштуйте це значення
+      left: -80px; // Налаштуйте це значення, щоб виступало за ліву межу обгортки
       display: flex;
       align-items: center;
       gap: 12px;
-      max-width: 260px;
+      padding: 15px;
+      max-width: 280px;
 
-     .hero__badge-avatars {
-    display: flex;
-    gap: 8px; 
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    
-    img {
-      flex-shrink: 0; 
-    }
-    
-    .hero__badge-avatars-more {
-      flex-shrink: 0;
-    }
-  }
+      .hero__badge-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
 
-      .hero__badge-text {
-        .name {
-          font-weight: 600;
-          font-size: 0.95rem;
-          margin-bottom: 4px;
-          color: darken($secondary-text-color, 15%);
-        }
-        .comment {
-          font-size: 0.85rem;
-          color: $secondary-text-color;
-          line-height: 1.4;
-        }
+      .hero__badge-name {
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+        color: darken($secondary-text-color, 15%);
+      }
+      .hero__badge-comment {
+        font-size: 0.85rem;
+        color: $secondary-text-color;
+        line-height: 1.4;
       }
     }
 
     &--courses {
-      bottom: 80px;
-      left: 40px;
-      padding: 20px;
+      // Позиціонування за зображенням (праворуч від голови дівчини)
+      top: 160px; // Налаштуйте це значення
+      right: -20px; // Налаштуйте це значення, щоб виступало за праву межу обгортки
+      padding: 15px 20px;
       text-align: center;
-      
-      .number {
-        font-size: 2.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      .hero__badge-number {
+        font-size: 1.8rem;
         font-weight: 700;
         color: $primary-color;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
         line-height: 1;
       }
-      
-      .category {
-        font-size: 0.9rem;
+
+      .hero__badge-category {
+        font-size: 0.8rem;
         color: $secondary-text-color;
         white-space: nowrap;
       }
     }
 
     &--students {
-      bottom: 40px;
-      right: 40px;
-      padding: 15px;
-      
-      .avatars {
+      // Позиціонування за зображенням (знизу під дівчиною)
+      bottom: -60px; // Налаштуйте це значення, щоб вона була нижче зображення
+      left: 50%;
+      transform: translateX(-50%); // Центрування по горизонталі
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      max-width: 260px; // Обмежте ширину, щоб відповідати зображенню
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .hero__badge-avatars {
         display: flex;
-        gap: 8px;
-        margin-bottom: 10px;
-        
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 0;
+
         img {
-          width: 34px;
-          height: 34px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           border: 2px solid $white;
           object-fit: cover;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+          &:not(:first-child) {
+            margin-left: -12px;
+          }
         }
-        
-        .more {
-          width: 34px;
-          height: 34px;
+
+        .hero__badge-avatars-more {
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           background: rgba($primary-color, 0.1);
           color: $primary-color;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           font-weight: 600;
+          margin-left: -12px;
+          border: 2px solid $white;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
       }
-      
-      .text {
-        font-size: 0.85rem;
+
+      .hero__badge-students-text {
+        font-size: 0.9rem;
         color: $secondary-text-color;
-        text-align: right;
         font-weight: 500;
+        line-height: 1.4;
+        white-space: nowrap;
       }
     }
   }
