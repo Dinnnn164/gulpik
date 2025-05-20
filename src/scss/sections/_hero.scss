@@ -1,5 +1,3 @@
-// Цей код має бути у файлі sections/_hero.scss
-// Не потрібно повторювати змінні та міксини тут, вони вже імпортуються в головному style.scss
 
 .hero {
   padding: 80px 0;
@@ -127,7 +125,6 @@
     }
   }
 
-  // Common badge style
   &__badge {
     position: absolute;
     background: $white;
@@ -136,9 +133,8 @@
     z-index: 2;
 
     &--review {
-      // Позиціонування за зображенням (ліворуч від голови дівчини)
-      top: 120px; // Налаштуйте це значення
-      left: -80px; // Налаштуйте це значення, щоб виступало за ліву межу обгортки
+      top: 120px; 
+      left: -80px; 
       display: flex;
       align-items: center;
       gap: 12px;
@@ -166,9 +162,8 @@
     }
 
     &--courses {
-      // Позиціонування за зображенням (праворуч від голови дівчини)
-      top: 160px; // Налаштуйте це значення
-      right: -20px; // Налаштуйте це значення, щоб виступало за праву межу обгортки
+      top: 160px; 
+      right: -20px; 
       padding: 15px 20px;
       text-align: center;
       border-radius: 10px;
@@ -190,14 +185,13 @@
     }
 
     &--students {
-      // Позиціонування за зображенням (знизу під дівчиною)
-      bottom: -60px; // Налаштуйте це значення, щоб вона була нижче зображення
+      bottom: -60px; 
       left: 50%;
-      transform: translateX(-50%); // Центрування по горизонталі
+      transform: translateX(-50%); 
       padding: 10px 15px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      max-width: 260px; // Обмежте ширину, щоб відповідати зображенню
+      max-width: 260px; 
 
       display: flex;
       flex-direction: column;

@@ -1,0 +1,136 @@
+.footer {
+  position: relative;
+  background: #f4f0fb; 
+  padding: 5rem 0 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #1e1e1e;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 100%;
+    background: rgb(252, 219, 247);
+    border-radius: 2rem;
+    z-index: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1; 
+}
+
+  &__info {
+    .logo img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .footer__address,
+    .footer__phone {
+      font-size: 0.9rem;
+      color: #5b5b5b;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .footer__phone {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-left: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+    }
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e1e1e;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-link {
+      display: inline-block;
+      color: #5b5b5b;
+      font-size: 0.9rem;
+      text-decoration: none;
+      line-height: 2;
+      opacity: 0.85;
+      transition: all 0.2s;
+
+      &:hover {
+        color: #7c3aed; // фіолетовий
+        opacity: 1;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    &-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      img {
+        width: 18px;
+        height: 18px;
+        filter: grayscale(1);
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    opacity: 0.7;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

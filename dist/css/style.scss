@@ -7,7 +7,7 @@
 
 @import 'layout/container';
 @import 'layout/_header';
-@import 'layout/_footer';
+@import 'layout/footer';
 
 
 @import 'components/_buttons';
@@ -17,7 +17,7 @@
 @import 'sections/_values';
 @import 'sections/_teachers';
 @import 'sections/student-reviews';
-@import 'sections/FAQ';
+@import 'sections/_FAQ';
 
 body {
     font-family: $primary-font;
