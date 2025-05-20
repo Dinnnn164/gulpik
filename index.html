@@ -173,38 +173,88 @@
             </div>
         </section>
 
-        <section class="student-reviews">
-            <div class="container student-reviews__container">
-                <p class="student-reviews__subtitle">TOP STUDYING</p>
-                <h2 class="student-reviews__title">Our students say</h2>
+      <section class="student-reviews">
+    <div class="container student-reviews__container">
+        <p class="student-reviews__subtitle">TOP STUDYING</p>
+        <h2 class="student-reviews__title">Our students say</h2>
 
-                <div class="student-reviews__content">
-                    <div class="student-review-card">
-                        <img 
-                            src="img/teachers/4.png" 
-                            alt="Фото Martin Watson" 
-                            class="student-review-card__image"
-                        >
+        <div class="student-carousel">
+            <div class="student-carousel-inner">
+                <!-- Slide 1 -->
+                <div class="student-carousel-item active">
+                    <div class="student-slide">
+                        <div class="student-review-card">
+                            <img src="img/teachers/4.png" alt="Martin Watson" class="student-review-card__image">
+                        </div>
+                        <div class="student-review-details">
+                            <h3 class="student-review-details__name">Martin Watson</h3>
+                            <p class="student-review-details__course">
+                                <img src="img/flags/2.png" alt="Spanish flag" class="student-review-details__flag">
+                                B2 course student
+                            </p>
+                            <p class="student-review-details__text">
+                                There is no way I could have made the same progress learning Spanish without using Lingua...
+                            </p>
+                        </div>
                     </div>
-                    <div class="student-review-details">
-                        <h3 class="student-review-details__name">Martin Watson</h3>
-                        <p class="student-review-details__course">
-                            <img src="img/flags/2.png" alt="Spanish flag" class="student-review-details__flag">
-                            B2 course student
-                        </p>
-                        <p class="student-review-details__text">
-                            There is no way I could have made the same progress learning Spanish without using Lingua. The best part is now learning Spanish has become one of my biggest hobbies.
-                        </p>
-                        <div class="student-review-details__pagination">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="student-carousel-item">
+                    <div class="student-slide">
+                        <div class="student-review-card">
+                            <img src="img/teachers/5.png" alt="Sarah Johnson" class="student-review-card__image">
+                        </div>
+                        <div class="student-review-details">
+                            <h3 class="student-review-details__name">Sarah Johnson</h3>
+                            <p class="student-review-details__course">
+                                <img src="img/flags/3.png" alt="French flag" class="student-review-details__flag">
+                                A1 course student
+                            </p>
+                            <p class="student-review-details__text">
+                                Amazing experience! The teachers are very professional and caring...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="student-carousel-item">
+                    <div class="student-slide">
+                        <div class="student-review-card">
+                            <img src="img/teachers/6.png" alt="Sara Kon" class="student-review-card__image">
+                        </div>
+                        <div class="student-review-details">
+                            <h3 class="student-review-details__name">Sara Kon</h3>
+                            <p class="student-review-details__course">
+                                <img src="img/flags/4.png" alt="Korea flag" class="student-review-details__flag">
+                                C1 course student
+                            </p>
+                            <p class="student-review-details__text">
+                                Wonderful atmosphere and highly qualified teachers! You can feel they genuinely care about every student
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Controls -->
+            <button class="student-carousel-control prev">
+                <span class="carousel-control-icon">‹</span>
+            </button>
+            <button class="student-carousel-control next">
+                <span class="carousel-control-icon">›</span>
+            </button>
+
+            <!-- Indicators -->
+            <div class="student-carousel-indicators">
+                <button type="button" data-index="0" class="active"></button>
+                <button type="button" data-index="1"></button>
+                <button type="button" data-index="2"></button>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section class="faq">
             <div class="container faq__container">
@@ -330,6 +380,6 @@
             </div>
         </div>
     </footer>
-    <script src="dist/js/script.js" defer></script>
+    <script src="dist/css/js/script.js" defer></script>
 </body>
 </html>
